@@ -12,8 +12,6 @@ class VisitListSerializer(serializers.ModelSerializer):
 
 class VisitDetailSerializer(serializers.ModelSerializer):
 
-    articles = serializers.SerializerMethodField()
-
     class Meta:
         model = Visit
         fields = ['id', 
