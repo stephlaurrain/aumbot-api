@@ -1,0 +1,13 @@
+    aumapi_devenv_img:        
+        build: ./docker/build/
+        ports:
+            - "3306:3306"
+        volumes:              
+        - ./docker/trf:/root/trf          
+        container_name: aumapi_devenv_ctn
+
+
+
+
+
+
