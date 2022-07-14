@@ -8,7 +8,7 @@ class Ban(models.Model):
     done = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return self.aum_id
 
 class Charm(models.Model):
     
@@ -17,7 +17,7 @@ class Charm(models.Model):
     date_charm = models.DateTimeField(null=True)
 
     def __str__(self):
-        return self.name
+        return self.aum_id
 
 class Contact(models.Model):
     
@@ -25,7 +25,7 @@ class Contact(models.Model):
     aum_id = models.CharField(max_length=25)
     
     def __str__(self):
-        return self.name
+        return self.aum_id
 
 class Distance(models.Model):
     
@@ -34,7 +34,7 @@ class Distance(models.Model):
     km = models.IntegerField(null=True)
     
     def __str__(self):
-        return self.name
+        return self.id
 
 class Favorite(models.Model):
     
@@ -42,7 +42,7 @@ class Favorite(models.Model):
     aum_id = models.CharField(max_length=25)
     
     def __str__(self):
-        return self.name
+        return self.aum_id
 
 class Keyword(models.Model):
     
@@ -51,7 +51,7 @@ class Keyword(models.Model):
     weight = models.IntegerField(null=True)
     
     def __str__(self):
-        return self.name
+        return self.word
 
 class Visit(models.Model):
     
@@ -77,6 +77,6 @@ class Visit(models.Model):
     full_shopping = models.TextField(blank=True,null=True)
 
     def __str__(self):
-        return self.name
+        return self.aum_id
 
 
