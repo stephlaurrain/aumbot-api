@@ -1,5 +1,5 @@
 from django.contrib import admin
-from aum.models import Visit
+from aum.models.visit import Visit
 
 
 class VisitAdmin(admin.ModelAdmin):
