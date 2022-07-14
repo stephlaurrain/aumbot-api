@@ -15,11 +15,7 @@ from aum.models.favorite import Favorite
 from aum.models.keyword import Keyword
 from aum.models.visit import Visit
 
-
-
-
-from aum.serializers import VisitDetailSerializer, VisitListSerializer
-
+from aum.serializers.visit import VisitDetailSerializer, VisitListSerializer
 
 class MultipleSerializerMixin:
 
