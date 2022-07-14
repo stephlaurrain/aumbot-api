@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 
@@ -6,10 +7,13 @@ from aum.models import Keyword
 
 UserModel = get_user_model()
 
+load_dotenv()
 ADMIN_ID = os.getenv('ADMIN_ID')
 ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD')
+ADMIN_MAILBOX = os.getenv('ADMIN_MAILBOX')
 USER_ID = os.getenv('USER_ID')
 USER_PASSWORD = os.getenv('USER_PASSWORD')
+USER_MAILBOX = os.getenv('USER_MAILBOX')
 
 KEYWORDS = [
     { 'word': 'genereuse', 'weight': 5},
@@ -139,7 +143,7 @@ class Command(BaseCommand):
 
         #init users
         UserModel.objects.all().delete();
-        UserModel.objects.create_superuser(ADMIN_ID, 'admin@commerce-numerique.com', ADMIN_PASSWORD)
-        UserModel.objects.create_user(USER_ID, 'steph@commerce-numerique.com', USER_PASSWORD, is_staff=True)
+        UserModel.objects.create_superuser(ADMIN_ID, ADMIN_MAILBOX, ADMIN_PASSWORD)
+        UserModel.objects.create_user(USER_ID, USER_MAILBOX, USER_PASSWORD, is_staff=True)
 
         self.stdout.write(self.style.SUCCESS("All Done !"))

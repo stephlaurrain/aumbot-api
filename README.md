@@ -7,7 +7,10 @@ The AumBot-API project is a REST API application to be executed with the Python 
 
 ### Virtual environment pipenv
 
-Define virtual environment (CD src)
+Define virtual environment 
+
+**(YOU MUST BE IN src directory)**
+
 ```
 python3 -m venv env
 ```
@@ -94,3 +97,21 @@ python manage.py showmigrations
 **[visit]http://localhost:8000/api/visit/**
 
 **[visit by aum_id]http://localhost:8000/api/visit/?aum_id=123541**
+
+## Change server port
+
+
+### Change host and port :
+```
+python manage.py runserver 127.0.0.1:7000
+```
+
+### Simple port :
+```
+python manage.py runserver 7000
+```
+
+### Running on docker :
+```
+python manage.py runserver 0:7000
+```
