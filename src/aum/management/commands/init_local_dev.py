@@ -1,3 +1,4 @@
+import os
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 
@@ -5,10 +6,10 @@ from aum.models import Keyword
 
 UserModel = get_user_model()
 
-ADMIN_ID = 'bigadm'
-ADMIN_PASSWORD = 'nope'
-USER_ID = 'steph'
-USER_PASSWORD = 'nope'
+ADMIN_ID = os.getenv('ADMIN_ID')
+ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD')
+USER_ID = os.getenv('USER_ID')
+USER_PASSWORD = os.getenv('USER_PASSWORD')
 
 KEYWORDS = [
     { 'word': 'genereuse', 'weight': 5},
