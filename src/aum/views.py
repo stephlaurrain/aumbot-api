@@ -1,3 +1,5 @@
+import logging
+
 from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -35,7 +37,8 @@ class AdminVisitViewset(MultipleSerializerMixin, ModelViewSet):
     permission_classes = [IsAdminAuthenticated]
 
 class VisitViewset(MultipleSerializerMixin, ModelViewSet):
-
+    logger = logging.getLogger(__name__)
+    logger.info("test")
     serializer_class = VisitListSerializer
     detail_serializer_class = VisitDetailSerializer
     queryset = Visit.objects.all()
