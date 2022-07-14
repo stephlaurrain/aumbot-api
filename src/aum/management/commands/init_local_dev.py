@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 
-from aum.models import Keyword
+from aum.models.keyword import Keyword
 
 UserModel = get_user_model()
 

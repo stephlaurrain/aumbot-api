@@ -3,7 +3,21 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 
 from aum.permissions import IsAdminAuthenticated
-from aum.models import Visit
+from aum.models.visit import Visit
+
+#ici ajoute modeles pour migration
+
+from aum.models.ban import Ban
+from aum.models.charm import Charm
+from aum.models.contact import Contact
+from aum.models.distance import Distance
+from aum.models.favorite import Favorite
+from aum.models.keyword import Keyword
+from aum.models.visit import Visit
+
+
+
+
 from aum.serializers import VisitDetailSerializer, VisitListSerializer
 
 

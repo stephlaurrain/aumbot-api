@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from aum.models import Visit
+from aum.models.visit import Visit
 
 
 class VisitListSerializer(serializers.ModelSerializer):
