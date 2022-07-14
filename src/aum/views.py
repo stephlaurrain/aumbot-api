@@ -39,6 +39,7 @@ class AdminVisitViewset(MultipleSerializerMixin, ModelViewSet):
 class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     logger = logging.getLogger(__name__)
     logger.info("test")
+    logger.error("prout")
     serializer_class = VisitListSerializer
     detail_serializer_class = VisitDetailSerializer
     queryset = Visit.objects.all()

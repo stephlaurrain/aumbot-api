@@ -122,9 +122,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
@@ -149,6 +149,16 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
 }
 
+LOG_LEVEL = os.getenv('LOG_LEVEL')
+PRODUCTION = os.getenv('PRODUCTION')
+if PRODUCTION is False:
+    handlers = ['file_info', 'file_error','console']
+else :
+    handlers = ['file_info','file_error']
+
+
+
+
 LOGGING = {
     'version': 1,
     # The version number of our log
@@ -166,19 +176,25 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'console'
         },
-        'file': {
-            'level': 'INFO',
+        'file_info': {
+            'level': LOG_LEVEL,
             'class': 'logging.FileHandler',
             'filename': BASE_DIR / 'logs/default.log',
             'formatter': 'file'
-        },
+        },        
+        'file_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'logs/error.log',
+            'formatter': 'file'
+        }
     },
     # A logger for WARNING which has a handler called 'file'. A logger can have multiple handler
     'loggers': {
        # notice the blank '', Usually you would put built in loggers like django or root here based on your needs
         '': {
-            'handlers': ['file', 'console'], #notice how file variable is called in handler which has been defined above
-            'level': 'INFO',
+            'handlers': handlers, #notice how file variable is called in handler which has been defined above
+            'level': LOG_LEVEL,
             'propagate': True,
         },
     },

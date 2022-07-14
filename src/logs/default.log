@@ -1,0 +1,46 @@
+Watching for file changes with StatReloader
+test
+/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+Watching for file changes with StatReloader
+test
+Watching for file changes with StatReloader
+test
+/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 18:11:25,986 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:11:26,022 aum.views    INFO     test
+2022-07-14 18:12:44,426 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 18:12:44,925 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:12:44,961 aum.views    INFO     test
+2022-07-14 18:13:43,986 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:13:44,021 aum.views    INFO     test
+2022-07-14 18:13:59,214 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:13:59,248 aum.views    INFO     test
+2022-07-14 18:14:52,977 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 18:14:53,432 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:14:53,466 aum.views    INFO     test
+2022-07-14 18:15:28,643 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 18:15:29,159 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:15:29,192 aum.views    INFO     test
+2022-07-14 18:15:32,487 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 18:15:32,921 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:15:32,954 aum.views    INFO     test
+2022-07-14 18:16:56,586 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 18:16:57,016 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:16:57,052 aum.views    INFO     test
+2022-07-14 18:17:04,430 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 18:17:04,893 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 18:17:04,928 aum.views    INFO     test
+2022-07-14 18:17:46,400 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 20:27:59,179 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 20:27:59,213 aum.views    INFO     test
+2022-07-14 20:27:59,213 aum.views    ERROR    prout
+2022-07-14 20:28:08,601 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 20:28:09,013 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 20:28:09,044 aum.views    INFO     test
+2022-07-14 20:28:09,044 aum.views    ERROR    prout
+2022-07-14 20:28:13,266 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 20:28:13,539 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 20:28:52,240 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/settings.py changed, reloading.
+2022-07-14 20:29:02,339 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-07-14 20:29:02,375 aum.views    INFO     test
+2022-07-14 20:29:02,375 aum.views    ERROR    prout
