@@ -107,3 +107,19 @@ class FavoriteViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = VisitDetailSerializer
     queryset = Favorite.objects.all()
     permission_classes = [IsBotAuthenticated]
+
+
+class DistanceViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Distance.objects.all()
+    permission_classes = [IsBotAuthenticated]
+
+
+class KeywordViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Keyword.objects.all()
+    permission_classes = [IsBotAuthenticated]

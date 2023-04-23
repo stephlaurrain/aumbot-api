@@ -18,6 +18,10 @@ router.register('contact', VisitViewset, basename='contact')
 router.register('admin/contact', AdminVisitViewset, basename='admin-contact')
 router.register('favorite', VisitViewset, basename='favorite')
 router.register('admin/favorite', AdminVisitViewset, basename='admin-favorite')
+router.register('distance', VisitViewset, basename='distance')
+router.register('admin/distance', AdminVisitViewset, basename='admin-distance')
+router.register('keyword', VisitViewset, basename='keyword')
+router.register('admin/keyword', AdminVisitViewset, basename='admin-keyword')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

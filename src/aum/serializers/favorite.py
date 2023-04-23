@@ -3,7 +3,7 @@ from rest_framework import serializers
 from aum.models.favorite import Favorite
 
 
-class CharmListSerializer(serializers.ModelSerializer):
+class FavoriteListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Favorite

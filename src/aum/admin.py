@@ -41,3 +41,17 @@ class FavoriteAdmin(admin.ModelAdmin):
     list_display = ('id', 'aum_id')
 
 admin.site.register(Favorite, FavoriteAdmin)
+
+
+class DistanceAdmin(admin.ModelAdmin):
+
+    list_display = ('id', 'city', "km")
+
+admin.site.register(Distance, DistanceAdmin)
+
+
+class KeywordAdmin(admin.ModelAdmin):
+
+    list_display = ('id', 'word', "weight")
+
+admin.site.register(Keyword, KeywordAdmin)

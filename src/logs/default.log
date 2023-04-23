@@ -319,3 +319,28 @@ rest_framework.request.WrappedAttributeError: 'IsAuthenticatedOrReadOnly' object
 2023-04-23 22:59:57,172 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2023-04-23 23:01:40,840 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/admin.py changed, reloading.
 2023-04-23 23:01:41,264 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:04:56,370 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/admin.py changed, reloading.
+2023-04-23 23:04:56,801 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:05:11,125 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/admin.py changed, reloading.
+2023-04-23 23:05:11,556 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:05:58,236 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/admin.py changed, reloading.
+2023-04-23 23:05:58,687 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:07:19,998 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/urls.py changed, reloading.
+2023-04-23 23:07:20,500 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:09:07,872 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/views.py changed, reloading.
+2023-04-23 23:09:08,356 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:09:30,176 django.request WARNING  Unauthorized: /api/favorite/
+2023-04-23 23:09:35,344 django.request WARNING  Unauthorized: /api/contact/
+2023-04-23 23:09:41,721 django.request WARNING  Unauthorized: /api/charm/
+2023-04-23 23:09:48,496 django.request WARNING  Unauthorized: /api/ban/
+2023-04-23 23:11:37,872 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/admin.py changed, reloading.
+2023-04-23 23:11:38,300 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:12:41,355 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/project/urls.py changed, reloading.
+2023-04-23 23:12:41,802 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:14:02,549 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/admin.py changed, reloading.
+2023-04-23 23:14:02,995 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:14:16,571 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:15:31,940 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/views.py changed, reloading.
+2023-04-23 23:15:32,376 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-04-23 23:17:20,645 django.utils.autoreload INFO     /media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/src/aum/serializers/visit.py changed, reloading.
+2023-04-23 23:17:21,120 django.utils.autoreload INFO     Watching for file changes with StatReloader
