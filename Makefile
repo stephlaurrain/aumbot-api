@@ -1,8 +1,8 @@
 all: build
 
 PROJECT=commercenumerique
-CONTAINER_NAME=djangorest_devenv_ctn
-IMAGE_NAME=djangorest_devenv_img
+CONTAINER_NAME=aumapi_devenv_ctn
+IMAGE_NAME=aumapi_devenv_img
 DOCKER_USER=docker
 REMOTE_ROOT=-w '/root'
 
@@ -30,7 +30,8 @@ startapache:
 startmysql:
 	docker exec  $(REMOTE_ROOT) $(CONTAINER_NAME) /etc/init.d/mysql start
  
-
+stop:
+	docker stop $(CONTAINER_NAME)
 
 stopall:
 	docker stop $$(docker ps -q -a)
