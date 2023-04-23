@@ -14,6 +14,10 @@ router.register('ban', VisitViewset, basename='ban')
 router.register('admin/ban', AdminVisitViewset, basename='admin-ban')
 router.register('charm', VisitViewset, basename='charm')
 router.register('admin/charm', AdminVisitViewset, basename='admin-charm')
+router.register('contact', VisitViewset, basename='contact')
+router.register('admin/contact', AdminVisitViewset, basename='admin-contact')
+router.register('favorite', VisitViewset, basename='favorite')
+router.register('admin/favorite', AdminVisitViewset, basename='admin-favorite')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

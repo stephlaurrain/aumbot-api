@@ -75,3 +75,35 @@ class CharmViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = VisitDetailSerializer
     queryset = Charm.objects.all()
     permission_classes = [IsBotAuthenticated]
+
+
+class AdminContactViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Contact.objects.all()
+    permission_classes = [IsAdminAuthenticated]
+
+
+class ContactViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Contact.objects.all()
+    permission_classes = [IsBotAuthenticated]
+
+
+class AdminFavoriteViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Favorite.objects.all()
+    permission_classes = [IsAdminAuthenticated]
+
+
+class FavoriteViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Favorite.objects.all()
+    permission_classes = [IsBotAuthenticated]
