@@ -10,6 +10,8 @@ from aum.views import VisitViewset, AdminVisitViewset
 router = routers.SimpleRouter()
 router.register('visit', VisitViewset, basename='visit')
 router.register('admin/visit', AdminVisitViewset, basename='admin-visit')
+router.register('ban', VisitViewset, basename='ban')
+router.register('admin/ban', AdminVisitViewset, basename='admin-ban')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

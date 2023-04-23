@@ -11,6 +11,6 @@ class IsAdminAuthenticated(BasePermission):
 
 class IsBotAuthenticated(BasePermission):
 
-    def has_permission(self, request, view):
+    def has_permission(self, request, view):        
         return bool(request.user
                     and request.user.is_authenticated)

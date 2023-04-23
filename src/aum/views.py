@@ -42,3 +42,17 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = VisitDetailSerializer
     queryset = Visit.objects.all()
     permission_classes = [IsBotAuthenticated]
+
+class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Ban.objects.all()
+    permission_classes = [IsAdminAuthenticated]
+
+class BanViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Ban.objects.all()
+    permission_classes = [IsBotAuthenticated]
