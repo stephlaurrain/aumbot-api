@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
             name='Distance',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('city', models.CharField(max_length=25)),
+                ('city', models.CharField(max_length=200)),
                 ('km', models.IntegerField(null=True)),
             ],
         ),
@@ -69,7 +69,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=255, null=True)),
                 ('measurement', models.CharField(max_length=255, null=True)),
                 ('nb_photo', models.IntegerField(null=True)),
-                ('desc', models.TextField(blank=True, null=True)),
+                ('description', models.TextField(blank=True, null=True)),
                 ('shopping', models.TextField(blank=True, null=True)),
                 ('crack', models.TextField(blank=True, null=True)),
                 ('cant_stand', models.TextField(blank=True, null=True)),
