@@ -7,7 +7,7 @@ class VisitListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Visit
-        fields = ['id', 'aum_id']
+        fields = ['id', 'aum_id','username']
 
 
 class VisitDetailSerializer(serializers.ModelSerializer):

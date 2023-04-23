@@ -4,7 +4,7 @@ from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from rest_framework.response import Response
 from rest_framework.decorators import action
 
-from aum.permissions import IsAdminAuthenticated
+from aum.permissions import IsAdminAuthenticated, IsBotAuthenticated
 from aum.models.visit import Visit
 
 #ici ajoute modeles pour migration
@@ -37,9 +37,8 @@ class AdminVisitViewset(MultipleSerializerMixin, ModelViewSet):
     permission_classes = [IsAdminAuthenticated]
 
 class VisitViewset(MultipleSerializerMixin, ModelViewSet):
-    logger = logging.getLogger(__name__)
-    logger.info("test")
-    logger.error("prout")
+
     serializer_class = VisitListSerializer
     detail_serializer_class = VisitDetailSerializer
     queryset = Visit.objects.all()
+    permission_classes = [IsBotAuthenticated]

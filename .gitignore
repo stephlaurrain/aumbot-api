@@ -11,8 +11,7 @@ __pycache__/
 
 .vscode/
 .idea/
-
-db.sqlite3
-
 .coverage
 .pytest*
+src/aum/management/commands/init_local_dev.py
+src/logs
