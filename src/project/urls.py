@@ -4,24 +4,24 @@ from django.urls import path, include
 
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from aum.views import VisitViewset, AdminVisitViewset
+from aum.views import VisitViewset, AdminVisitViewset, BanViewset, AdminBanViewset, CharmViewset, AdminCharmViewset, ContactViewset, AdminContactViewset, FavoriteViewset, AdminFavoriteViewset, DistanceViewset, AdminDistanceViewset, KeywordViewset, AdminKeywordViewset
 
 
 router = routers.SimpleRouter()
 router.register('visit', VisitViewset, basename='visit')
 router.register('admin/visit', AdminVisitViewset, basename='admin-visit')
-router.register('ban', VisitViewset, basename='ban')
-router.register('admin/ban', AdminVisitViewset, basename='admin-ban')
-router.register('charm', VisitViewset, basename='charm')
-router.register('admin/charm', AdminVisitViewset, basename='admin-charm')
-router.register('contact', VisitViewset, basename='contact')
-router.register('admin/contact', AdminVisitViewset, basename='admin-contact')
-router.register('favorite', VisitViewset, basename='favorite')
-router.register('admin/favorite', AdminVisitViewset, basename='admin-favorite')
-router.register('distance', VisitViewset, basename='distance')
-router.register('admin/distance', AdminVisitViewset, basename='admin-distance')
-router.register('keyword', VisitViewset, basename='keyword')
-router.register('admin/keyword', AdminVisitViewset, basename='admin-keyword')
+router.register('ban', BanViewset, basename='ban')
+router.register('admin/ban', AdminBanViewset, basename='admin-ban')
+router.register('charm', CharmViewset, basename='charm')
+router.register('admin/charm', AdminCharmViewset, basename='admin-charm')
+router.register('contact', ContactViewset, basename='contact')
+router.register('admin/contact', AdminContactViewset, basename='admin-contact')
+router.register('favorite', FavoriteViewset, basename='favorite')
+router.register('admin/favorite', AdminFavoriteViewset, basename='admin-favorite')
+router.register('distance', DistanceViewset, basename='distance')
+router.register('admin/distance', AdminDistanceViewset, basename='admin-distance')
+router.register('keyword', KeywordViewset, basename='keyword')
+router.register('admin/keyword', AdminKeywordViewset, basename='admin-keyword')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
