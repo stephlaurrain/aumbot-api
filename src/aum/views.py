@@ -36,12 +36,14 @@ class AdminVisitViewset(MultipleSerializerMixin, ModelViewSet):
     queryset = Visit.objects.all()
     permission_classes = [IsAdminAuthenticated]
 
+
 class VisitViewset(MultipleSerializerMixin, ModelViewSet):
 
     serializer_class = VisitListSerializer
     detail_serializer_class = VisitDetailSerializer
     queryset = Visit.objects.all()
     permission_classes = [IsBotAuthenticated]
+
 
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
 
@@ -50,9 +52,26 @@ class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
     queryset = Ban.objects.all()
     permission_classes = [IsAdminAuthenticated]
 
+
 class BanViewset(MultipleSerializerMixin, ModelViewSet):
 
     serializer_class = VisitListSerializer
     detail_serializer_class = VisitDetailSerializer
     queryset = Ban.objects.all()
+    permission_classes = [IsBotAuthenticated]
+
+
+class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Charm.objects.all()
+    permission_classes = [IsAdminAuthenticated]
+
+
+class CharmViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = VisitListSerializer
+    detail_serializer_class = VisitDetailSerializer
+    queryset = Charm.objects.all()
     permission_classes = [IsBotAuthenticated]

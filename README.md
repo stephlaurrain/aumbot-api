@@ -21,6 +21,12 @@ Use the environment
 source env/bin/activate
 ```
 
+quit environment
+
+```
+deactivate
+```
+
 ### Set environnement into vs code 
 
 ```

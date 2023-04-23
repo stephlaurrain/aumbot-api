@@ -8,3 +8,111 @@
 2022-07-14 20:26:17,524 aum.views    ERROR    prout
 2022-07-14 20:27:01,917 aum.views    ERROR    prout
 2022-07-14 20:29:02,375 aum.views    ERROR    prout
+2023-04-23 14:35:08,996 aum.views    ERROR    prout
+2023-04-23 14:44:12,696 aum.views    ERROR    prout
+2023-04-23 20:20:50,146 aum.views    ERROR    prout
+2023-04-23 20:21:08,076 aum.views    ERROR    prout
+2023-04-23 20:39:49,309 aum.views    ERROR    prout
+2023-04-23 20:49:00,904 aum.views    ERROR    prout
+2023-04-23 20:49:36,178 aum.views    ERROR    prout
+2023-04-23 20:50:24,197 aum.views    ERROR    prout
+2023-04-23 21:20:54,429 aum.views    ERROR    prout
+2023-04-23 21:20:56,116 aum.views    ERROR    prout
+2023-04-23 21:48:37,494 django.request ERROR    Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/utils/deprecation.py", line 116, in __call__
+    response = self.process_request(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2023-04-23 21:48:54,291 django.request ERROR    Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/utils/deprecation.py", line 116, in __call__
+    response = self.process_request(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2023-04-23 21:49:00,496 django.request ERROR    Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/utils/deprecation.py", line 116, in __call__
+    response = self.process_request(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2023-04-23 21:53:26,477 aum.views    ERROR    prout
+2023-04-23 21:54:39,477 aum.views    ERROR    prout
+2023-04-23 21:55:25,062 aum.views    ERROR    prout
+2023-04-23 21:55:25,064 aum.views    ERROR    prout
+2023-04-23 21:56:22,573 aum.views    ERROR    prout
+2023-04-23 21:56:22,575 aum.views    ERROR    prout
+2023-04-23 21:56:27,300 aum.views    ERROR    prout
+2023-04-23 22:01:52,207 aum.views    ERROR    prout
+2023-04-23 22:02:05,535 django.request ERROR    Internal Server Error: /api/visit/
+Traceback (most recent call last):
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/request.py", line 74, in wrap_attributeerrors
+    yield
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+AttributeError: 'IsAuthenticatedOrReadOnly' object has no attribute 'authenticate'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/request.py", line 226, in user
+    with wrap_attributeerrors():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/request.py", line 74, in wrap_attributeerrors
+    yield
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/media/steph/SSD-dev/DEVPRO/Python/REST/aumBotApi/main/env/lib/python3.10/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+rest_framework.request.WrappedAttributeError: 'IsAuthenticatedOrReadOnly' object has no attribute 'authenticate'
+2023-04-23 22:05:20,103 aum.views    ERROR    prout
+2023-04-23 22:06:03,717 aum.views    ERROR    prout
+2023-04-23 22:06:55,634 aum.views    ERROR    prout
+2023-04-23 22:10:26,337 aum.views    ERROR    prout
+2023-04-23 22:11:22,357 aum.views    ERROR    prout
+2023-04-23 22:19:05,598 aum.views    ERROR    prout
+2023-04-23 22:21:24,890 aum.views    ERROR    prout
+2023-04-23 22:21:32,744 aum.views    ERROR    prout
+2023-04-23 22:21:42,772 aum.views    ERROR    prout
+2023-04-23 22:21:42,774 aum.views    ERROR    prout
+2023-04-23 22:21:53,845 aum.views    ERROR    prout
