@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
             name='Distance',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('city', models.CharField(max_length=200)),
+                ('city', models.CharField(max_length=100)),
                 ('km', models.IntegerField(null=True)),
             ],
         ),
