@@ -127,7 +127,11 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
         done = request.data['done']
         Ban.objects.filter(aum_id=aum_id).update(done=done)
         return Response()
-  
+
+    @action(detail=False, methods=['put'])
+    def reinitbannedflag(self, request):                        
+        Ban.objects.all().update(done=False)
+        return Response()
 
 class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
 
