@@ -61,7 +61,7 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     @action(detail=False)
     def count(self, request):        
         res = Visit.objects.count()
-        return Response(data={"res":res})
+        return Response(data={"count":res})
 
     @action(detail=False)
     def test(self, request):        
@@ -98,7 +98,7 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
     @action(detail=False)
     def count(self, request):        
         res = Ban.objects.count()
-        return Response(data={"res":res})
+        return Response(data={"count":res})
 
 class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
 
@@ -121,7 +121,11 @@ class CharmViewset(MultipleSerializerMixin, ModelViewSet):
         print(request.data['aum_id'])
         Charm.objects.filter(aum_id=request.data['aum_id']).delete()        
         return Response()
-
+    
+    @action(detail=False)
+    def count(self, request):        
+        res = Charm.objects.count()
+        return Response(data={"count":res})
 
 class AdminContactViewset(MultipleSerializerMixin, ModelViewSet):
 
