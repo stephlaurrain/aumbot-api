@@ -7,6 +7,7 @@ from rest_framework.decorators import action
 from aum.permissions import IsAdminAuthenticated, IsBotAuthenticated
 from aum.models.visit import Visit
 
+import json
 #ici ajoute modeles pour migration
 
 from aum.models.ban import Ban
@@ -61,6 +62,13 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     @action(detail=False)
     def count(self, request):        
         res = Visit.objects.count()
+        return Response(data={"count":res})
+
+    @action(detail=False)
+    def dumbed(self, request):        
+        # print(str(request.query_params))
+        threshold = request.query_params['threshold']
+        res = Visit.objects.filter(score__gt=threshold).count()  # (gte)                
         return Response(data={"count":res})
 
     @action(detail=False)
