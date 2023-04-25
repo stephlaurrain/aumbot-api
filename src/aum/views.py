@@ -53,6 +53,11 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     permission_classes = [IsBotAuthenticated]
     paginator = None
 
+    @action(detail=False, methods=['post'])
+    def clean(self, request):        
+        Visit.objects.all().delete()
+        return Response()
+
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
 
     serializer_class = BanListSerializer

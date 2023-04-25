@@ -156,22 +156,12 @@ REST_FRAMEWORK = {
     ]
 }
 
-"""
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework_simplejwt.authentication.JWTAuthentication']
-"""
-
 LOG_LEVEL = os.getenv('LOG_LEVEL')
 PRODUCTION = os.getenv('PRODUCTION')
 if PRODUCTION is False:
     handlers = ['file_info', 'file_error','console']
 else :
     handlers = ['file_info','file_error']
-
-
-
 
 LOGGING = {
     'version': 1,
