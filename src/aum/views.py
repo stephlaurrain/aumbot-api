@@ -147,6 +147,6 @@ class KeywordViewset(MultipleSerializerMixin, ModelViewSet):
 
     serializer_class = KeywordListSerializer
     detail_serializer_class = KeywordDetailSerializer
-    queryset = Keyword.objects.all()
+    queryset = Keyword.objects.all().order_by('word').values()
     permission_classes = [IsBotAuthenticated]
     paginator = None
