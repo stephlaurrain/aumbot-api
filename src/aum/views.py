@@ -108,6 +108,11 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
         res = Ban.objects.count()
         return Response(data={"count":res})
 
+    @action(detail=False)
+    def notdone(self, request):        
+        res = Ban.objects.filter(done=False).values()
+        return Response(data={"count":res})
+
 class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
 
     serializer_class = CharmListSerializer
