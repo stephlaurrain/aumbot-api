@@ -123,6 +123,11 @@ class FavoriteViewset(MultipleSerializerMixin, ModelViewSet):
     queryset = Favorite.objects.all()
     permission_classes = [IsBotAuthenticated]
     paginator = None
+    
+    @action(detail=False, methods=['post'])
+    def clean(self, request):        
+        Favorite.objects.all().delete()
+        return Response()
 
 class AdminDistanceViewset(MultipleSerializerMixin, ModelViewSet):
 
