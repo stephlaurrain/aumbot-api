@@ -66,7 +66,7 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
         return Response(data={"count":res})
 
     @action(detail=False)
-    def dumbed(self, request):        
+    def dumb(self, request):        
         # print(str(request.query_params))
         threshold = request.query_params['threshold']
         res = Visit.objects.filter(score__gt=threshold).count()  # (gte)                
@@ -129,7 +129,7 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
         return Response()
 
     @action(detail=False, methods=['put'])
-    def reinitbannedflag(self, request):                        
+    def reinitbanflag(self, request):                        
         Ban.objects.all().update(done=False)
         return Response()
 
