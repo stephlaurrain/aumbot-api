@@ -54,7 +54,7 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     permission_classes = [IsBotAuthenticated]
     paginator = None
 
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['delete'])
     def clean(self, request):        
         Visit.objects.all().delete()
         return Response()
@@ -97,7 +97,7 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
     #     Ban.objects.filter(aum_id=pk).delete()
     #     return Response()
     
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['delete'])
     def delete(self, request):        
         print(request.data['aum_id'])
         Ban.objects.filter(aum_id=request.data['aum_id']).delete()        
@@ -129,7 +129,7 @@ class CharmViewset(MultipleSerializerMixin, ModelViewSet):
     permission_classes = [IsBotAuthenticated]
     paginator = None
 
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['delete'])
     def delete(self, request):        
         print(request.data['aum_id'])
         Charm.objects.filter(aum_id=request.data['aum_id']).delete()        
@@ -172,12 +172,12 @@ class FavoriteViewset(MultipleSerializerMixin, ModelViewSet):
     permission_classes = [IsBotAuthenticated]
     paginator = None
 
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['delete'])
     def clean(self, request):        
         Favorite.objects.all().delete()
         return Response()
     
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['delete'])
     def delete(self, request):        
         print(request.data['aum_id'])
         Favorite.objects.filter(aum_id=request.data['aum_id']).delete()        
