@@ -58,7 +58,7 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     @action(detail=False, methods=['post'])
     def clean(self, request):        
         Visit.objects.all().delete()
-        return Response()
+        return Response()  
 
     @action(detail=False)
     def count(self, request):        
