@@ -58,6 +58,16 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
         Visit.objects.all().delete()
         return Response()
 
+    @action(detail=False)
+    def count(self, request):        
+        res = Visit.objects.count()
+        return Response(data={"res":res})
+
+    @action(detail=False)
+    def test(self, request):        
+        print(str(request.query_params))
+        return Response(data={"prout":"prout"})
+
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
 
     serializer_class = BanListSerializer
@@ -85,6 +95,10 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
         Ban.objects.filter(aum_id=request.data['aum_id']).delete()        
         return Response()
 
+    @action(detail=False)
+    def count(self, request):        
+        res = Ban.objects.count()
+        return Response(data={"res":res})
 
 class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
 
