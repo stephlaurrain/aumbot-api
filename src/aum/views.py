@@ -51,7 +51,7 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = VisitDetailSerializer
     queryset = Visit.objects.all()
     permission_classes = [IsBotAuthenticated]
-
+    paginator = None
 
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
 
@@ -67,6 +67,7 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = BanDetailSerializer
     queryset = Ban.objects.all()
     permission_classes = [IsBotAuthenticated]
+    paginator = None
 
 
 class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
@@ -83,6 +84,7 @@ class CharmViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = CharmDetailSerializer
     queryset = Charm.objects.all()
     permission_classes = [IsBotAuthenticated]
+    paginator = None
 
 
 class AdminContactViewset(MultipleSerializerMixin, ModelViewSet):
@@ -99,7 +101,7 @@ class ContactViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = ContactDetailSerializer
     queryset = Contact.objects.all()
     permission_classes = [IsBotAuthenticated]
-
+    paginator = None
 
 class AdminFavoriteViewset(MultipleSerializerMixin, ModelViewSet):
 
@@ -115,7 +117,7 @@ class FavoriteViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = FavoriteDetailSerializer
     queryset = Favorite.objects.all()
     permission_classes = [IsBotAuthenticated]
-
+    paginator = None
 
 class AdminDistanceViewset(MultipleSerializerMixin, ModelViewSet):
 
@@ -130,6 +132,7 @@ class DistanceViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = DistanceDetailSerializer
     queryset = Distance.objects.all()
     permission_classes = [IsBotAuthenticated]
+    paginator = None
 
 
 class AdminKeywordViewset(MultipleSerializerMixin, ModelViewSet):
@@ -146,3 +149,4 @@ class KeywordViewset(MultipleSerializerMixin, ModelViewSet):
     detail_serializer_class = KeywordDetailSerializer
     queryset = Keyword.objects.all()
     permission_classes = [IsBotAuthenticated]
+    paginator = None
