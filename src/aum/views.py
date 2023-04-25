@@ -7,7 +7,8 @@ from rest_framework.decorators import action
 from aum.permissions import IsAdminAuthenticated, IsBotAuthenticated
 from aum.models.visit import Visit
 
-import json
+#import json
+from datetime import datetime
 #ici ajoute modeles pour migration
 
 from aum.models.ban import Ban
@@ -71,6 +72,15 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
         res = Visit.objects.filter(score__gt=threshold).count()  # (gte)                
         return Response(data={"count":res})
 
+    @action(detail=False, methods=['patch'])
+    def datevisit(self, request):        
+        print(request.data['aum_id'])
+        aum_id = request.data['aum_id']
+        Visit.objects.filter(aum_id=aum_id).update(date_visit=datetime.now())
+        # self.session.query(Visited).filter_by(aum_id=aum_id).update({Visited.date_visit : datetime.now()})
+        # Ban.objects.filter(aum_id=request.data['aum_id']).delete()        
+        return Response()
+
     @action(detail=False)
     def test(self, request):        
         print(str(request.query_params))
@@ -112,6 +122,7 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
     def notdone(self, request):        
         res = Ban.objects.filter(done=False).values()
         return Response(data={"count":res})
+  
 
 class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
 
