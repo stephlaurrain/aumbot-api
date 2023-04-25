@@ -49,7 +49,7 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
 
     serializer_class = VisitListSerializer
     detail_serializer_class = VisitDetailSerializer
-    queryset = Visit.objects.all()
+    queryset = Visit.objects.all().order_by('score').values()
     permission_classes = [IsBotAuthenticated]
     paginator = None
 
