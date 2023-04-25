@@ -74,11 +74,9 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
 
     @action(detail=False, methods=['patch'])
     def datevisit(self, request):        
-        print(request.data['aum_id'])
+        # print(request.data['aum_id'])
         aum_id = request.data['aum_id']
-        Visit.objects.filter(aum_id=aum_id).update(date_visit=datetime.now())
-        # self.session.query(Visited).filter_by(aum_id=aum_id).update({Visited.date_visit : datetime.now()})
-        # Ban.objects.filter(aum_id=request.data['aum_id']).delete()        
+        Visit.objects.filter(aum_id=aum_id).update(date_visit=datetime.now()) 
         return Response()
 
     @action(detail=False)
@@ -122,6 +120,13 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
     def notdone(self, request):        
         res = Ban.objects.filter(done=False).values()
         return Response(data={"count":res})
+
+    @action(detail=False, methods=['patch'])
+    def setdone(self, request):                
+        aum_id = request.data['aum_id']
+        done = request.data['done']
+        Ban.objects.filter(aum_id=aum_id).update(done=done)
+        return Response()
   
 
 class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
