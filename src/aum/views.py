@@ -109,6 +109,14 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
         res = Visit.objects.filter(date_visit__lt=datemax).order_by('score').values()
         return Response(res)
         
+    @action(detail=False)
+    def listhot(self, request):        
+        datemax = request.query_params['datemax']
+        threshold = request.query_params['threshold']
+        res = Visit.objects.filter(score__lte=threshold, date_visit__gte=datemax).order_by('date_visit', 'score').values()        
+        # return self.session.query(visit).filter(and_(visit.score<=seuil, visit.date_visit>=datemax)).order_by(visit.date_visit, visit.score).all()
+        return Response(res)
+                
 
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
 
