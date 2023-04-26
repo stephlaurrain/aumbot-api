@@ -264,3 +264,9 @@ class KeywordViewset(MultipleSerializerMixin, ModelViewSet):
     queryset = Keyword.objects.all().order_by('word').values()
     permission_classes = [IsBotAuthenticated]
     paginator = None
+
+    @action(detail=False)
+    def isin(self, request):        
+        word = request.query_params['word']
+        res = Keyword.objects.filter(word=word).first()        
+        return Response(data={"isin":res is not None})
