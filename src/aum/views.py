@@ -28,7 +28,6 @@ from aum.serializers.favorite import FavoriteDetailSerializer, FavoriteListSeria
 from aum.serializers.keyword import KeywordDetailSerializer, KeywordListSerializer
 
 
-
 class MultipleSerializerMixin:
 
     detail_serializer_class = None
@@ -117,6 +116,29 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
         # return self.session.query(visit).filter(and_(visit.score<=seuil, visit.date_visit>=datemax)).order_by(visit.date_visit, visit.score).all()
         return Response(res)
                 
+    @action(detail=False)
+    def listdumb(self, request):        
+        threshold = request.query_params['threshold']
+        res = Visit.objects.filter(score__lte=threshold).values()        
+        # return self.session.query(visit).filter(visit.score>=seuil).all()
+        return Response(res)
+
+    @action(detail=False)
+    def stat(self, request):        
+        from django.db.models import Count, Case, When, Value, CharField, Q
+        from django.db.models.functions import Cast, Extract, TruncDate
+
+        res = Visit.objects.annotate(
+         discount=Case(
+         When(score__lte=0, then=Value("zob")),
+         When(score__gt=0, then=Value("prout")),
+         default=Value("def"),
+          )).values_list("username", "discount")
+      
+        print(res)
+        # return Response(res)
+        return Response()
+           
 
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
 
