@@ -126,18 +126,30 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
     @action(detail=False)
     def stat(self, request):        
         from django.db.models import Count, Case, When, Value, CharField, Q
-        from django.db.models.functions import Cast, Extract, TruncDate
+        from django.db.models.functions import Cast, Extract, TruncDate, ExtractMonth, ExtractWeekDay, Extract
+        from datetime import datetime
+        # a marche po
 
-        res = Visit.objects.annotate(
-         discount=Case(
-         When(score__lte=0, then=Value("zob")),
-         When(score__gt=0, then=Value("prout")),
-         default=Value("def"),
-          )).values_list("username", "discount")
-      
+        my_case_stmt = Case(         
+            When(date_first_visit__week_day=1, then=Value("sunday")), 
+            When(date_first_visit__week_day=2, then=Value("monday")),
+            When(date_first_visit__week_day=3, then=Value("tuesday")),
+            When(date_first_visit__week_day=4, then=Value("wednesday")),
+            When(date_first_visit__week_day=5, then=Value("thursday")),
+            When(date_first_visit__week_day=6, then=Value("friday")),
+            When(date_first_visit__week_day=7, then=Value("saturday")),          
+            default=Value("noday"),
+            output_field=CharField()
+        )
+        res = Visit.objects.exclude(date_first_visit__isnull=True).annotate(
+            day=my_case_stmt,
+            date=TruncDate('date_first_visit')
+                ).values('day', 'date').annotate(
+                            count=Count('id')
+                ).order_by('date').all()
         print(res)
         # return Response(res)
-        return Response()
+        return Response(res)
            
 
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
