@@ -80,6 +80,12 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
         return Response()
 
     @action(detail=False)
+    def isin(self, request):        
+        aum_id = request.query_params['aum_id']
+        res = Visit.objects.filter(aum_id=aum_id).first()        
+        return Response(data={"isin":res is not None})
+
+    @action(detail=False)
     def test(self, request):        
         print(str(request.query_params))
         return Response(data={"prout":"prout"})
