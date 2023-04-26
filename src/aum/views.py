@@ -102,6 +102,13 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
         aum_id = request.query_params['aum_id']
         res = Visit.objects.filter(aum_id=aum_id).values().first()
         return Response(data={"line": res})
+    
+    @action(detail=False)
+    def listwithdelay(self, request):        
+        datemax = request.query_params['datemax']
+        res = Visit.objects.filter(date_visit__lt=datemax).order_by('score').values()
+        return Response(res)
+        
 
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
 
