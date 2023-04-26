@@ -90,12 +90,18 @@ class VisitViewset(MultipleSerializerMixin, ModelViewSet):
         aum_id = request.query_params['aum_id']
         datemax = request.query_params['datemax']
         res = Visit.objects.filter(aum_id=aum_id, date_visit__gt=datemax).first()        
-        return Response(data={"isin":res is not None})
+        return Response(data={"isin": res is not None})
 
     @action(detail=False)
     def test(self, request):        
         print(str(request.query_params))
-        return Response(data={"prout":"prout"})
+        return Response(data={"prout": "prout"})
+
+    @action(detail=False)
+    def linebyaumid(self, request):        
+        aum_id = request.query_params['aum_id']
+        res = Visit.objects.filter(aum_id=aum_id).values().first()
+        return Response(data={"line": res})
 
 class AdminBanViewset(MultipleSerializerMixin, ModelViewSet):
 
