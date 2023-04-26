@@ -261,6 +261,12 @@ class DistanceViewset(MultipleSerializerMixin, ModelViewSet):
     permission_classes = [IsBotAuthenticated]
     paginator = None
 
+    @action(detail=False)
+    def linebycity(self, request):        
+        city = request.query_params['city']
+        res = Distance.objects.filter(city=city).values().first()
+        return Response(data={"line": res})
+
 
 class AdminKeywordViewset(MultipleSerializerMixin, ModelViewSet):
 
