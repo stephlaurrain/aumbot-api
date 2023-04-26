@@ -138,6 +138,12 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
     def reinitbanflag(self, request):                        
         Ban.objects.all().update(done=False)
         return Response()
+    
+    @action(detail=False)
+    def isin(self, request):        
+        aum_id = request.query_params['aum_id']
+        res = Ban.objects.filter(aum_id=aum_id).first()        
+        return Response(data={"isin":res is not None})
 
 class AdminCharmViewset(MultipleSerializerMixin, ModelViewSet):
 
@@ -165,6 +171,12 @@ class CharmViewset(MultipleSerializerMixin, ModelViewSet):
     def count(self, request):        
         res = Charm.objects.count()
         return Response(data={"count":res})
+    
+    @action(detail=False)
+    def isin(self, request):        
+        aum_id = request.query_params['aum_id']
+        res = Charm.objects.filter(aum_id=aum_id).first()        
+        return Response(data={"isin":res is not None})
 
 class AdminContactViewset(MultipleSerializerMixin, ModelViewSet):
 
@@ -181,6 +193,12 @@ class ContactViewset(MultipleSerializerMixin, ModelViewSet):
     queryset = Contact.objects.all()
     permission_classes = [IsBotAuthenticated]
     paginator = None
+
+    @action(detail=False)
+    def isin(self, request):        
+        aum_id = request.query_params['aum_id']
+        res = Contact.objects.filter(aum_id=aum_id).first()        
+        return Response(data={"isin":res is not None})
 
 class AdminFavoriteViewset(MultipleSerializerMixin, ModelViewSet):
 
@@ -208,6 +226,12 @@ class FavoriteViewset(MultipleSerializerMixin, ModelViewSet):
         print(request.data['aum_id'])
         Favorite.objects.filter(aum_id=request.data['aum_id']).delete()        
         return Response()
+
+    @action(detail=False)
+    def isin(self, request):        
+        aum_id = request.query_params['aum_id']
+        res = Favorite.objects.filter(aum_id=aum_id).first()        
+        return Response(data={"isin":res is not None})
 
 class AdminDistanceViewset(MultipleSerializerMixin, ModelViewSet):
 
