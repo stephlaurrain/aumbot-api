@@ -187,7 +187,7 @@ class BanViewset(MultipleSerializerMixin, ModelViewSet):
     @action(detail=False)
     def notdone(self, request):        
         res = Ban.objects.filter(done=False).values()
-        return Response(data={"count":res})
+        return Response(res)
 
     @action(detail=False, methods=['patch'])
     def setdone(self, request):                
