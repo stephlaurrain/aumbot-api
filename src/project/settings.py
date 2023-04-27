@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+from datetime import timedelta
 # SL usage de pymysql
 import pymysql 
 
@@ -78,6 +79,11 @@ TEMPLATES = [
         },
     },
 ]
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
