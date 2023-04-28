@@ -6,7 +6,7 @@ from aum.models.contact import Contact
 from aum.models.favorite import Favorite
 from aum.models.distance import Distance
 from aum.models.keyword import Keyword
-
+from aum.models.stat import Stat
 
 class VisitAdmin(admin.ModelAdmin):
 
@@ -58,3 +58,9 @@ class KeywordAdmin(admin.ModelAdmin):
     list_display = ('id', 'word', "weight")
 
 admin.site.register(Keyword, KeywordAdmin)
+
+class StatAdmin(admin.ModelAdmin):
+
+    list_display = ('id', 'date_stat', 'age_min', 'age_min', 'nb_online')
+
+admin.site.register(Stat, StatAdmin)

@@ -4,7 +4,9 @@ from django.urls import path, include
 
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from aum.views import VisitViewset, AdminVisitViewset, BanViewset, AdminBanViewset, CharmViewset, AdminCharmViewset, ContactViewset, AdminContactViewset, FavoriteViewset, AdminFavoriteViewset, DistanceViewset, AdminDistanceViewset, KeywordViewset, AdminKeywordViewset
+from aum.views import VisitViewset, AdminVisitViewset, BanViewset, AdminBanViewset, CharmViewset, AdminCharmViewset, \
+     ContactViewset, AdminContactViewset, FavoriteViewset, AdminFavoriteViewset, DistanceViewset, AdminDistanceViewset, \
+        KeywordViewset, AdminKeywordViewset, StatViewset, AdminStatViewset
 
 
 router = routers.SimpleRouter()
@@ -22,6 +24,8 @@ router.register('distance', DistanceViewset, basename='distance')
 router.register('admin/distance', AdminDistanceViewset, basename='admin-distance')
 router.register('keyword', KeywordViewset, basename='keyword')
 router.register('admin/keyword', AdminKeywordViewset, basename='admin-keyword')
+router.register('stat', StatViewset, basename='stat')
+router.register('admin/stat', AdminStatViewset, basename='admin-stat')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

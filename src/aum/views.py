@@ -11,13 +11,14 @@ from aum.models.visit import Visit
 from datetime import datetime
 #ici ajoute modeles pour migration
 
+from aum.models.visit import Visit
 from aum.models.ban import Ban
 from aum.models.charm import Charm
 from aum.models.contact import Contact
 from aum.models.distance import Distance
 from aum.models.favorite import Favorite
 from aum.models.keyword import Keyword
-from aum.models.visit import Visit
+from aum.models.stat import Stat
 
 from aum.serializers.visit import VisitDetailSerializer, VisitListSerializer
 from aum.serializers.ban import BanDetailSerializer, BanListSerializer
@@ -26,7 +27,7 @@ from aum.serializers.contact import ContactDetailSerializer, ContactListSerializ
 from aum.serializers.distance import DistanceDetailSerializer, DistanceListSerializer
 from aum.serializers.favorite import FavoriteDetailSerializer, FavoriteListSerializer
 from aum.serializers.keyword import KeywordDetailSerializer, KeywordListSerializer
-
+from aum.serializers.stat import StatDetailSerializer, StatListSerializer
 
 class MultipleSerializerMixin:
 
@@ -338,3 +339,20 @@ class KeywordViewset(MultipleSerializerMixin, ModelViewSet):
         word = request.query_params['word']
         res = Keyword.objects.filter(word=word).first()        
         return Response(data={"isin":res is not None})
+
+
+class AdminStatViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = StatListSerializer
+    detail_serializer_class = StatDetailSerializer
+    queryset = Stat.objects.all()
+    permission_classes = [IsAdminAuthenticated]
+
+
+class StatViewset(MultipleSerializerMixin, ModelViewSet):
+
+    serializer_class = StatListSerializer
+    detail_serializer_class = StatDetailSerializer
+    queryset = Stat.objects.all().order_by('date_stat').values()
+    permission_classes = [IsBotAuthenticated]
+    paginator = None

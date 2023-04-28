@@ -58,6 +58,16 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
+            name='Stat',
+            fields=[
+                ('id', models.AutoField(primary_key=True, serialize=False)),
+                ('date_stat', models.DateTimeField(null=True)),
+                ('age_min', models.IntegerField(null=True)),
+                ('age_max', models.IntegerField(null=True)),
+                ('nb_online', models.IntegerField(null=True)),
+                ],
+        ),
+        migrations.CreateModel(
             name='Visit',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
