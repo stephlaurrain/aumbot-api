@@ -7,11 +7,11 @@ class StatListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Stat
-        fields = ['id', 'date_stat', 'age_min', 'age_min', 'nb_online']
+        fields = ['id', 'date_stat', 'age_min', 'age_max', 'nb_online', 'dist']
 
 
 class StatDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Stat
-        fields = ['id', 'date_stat', 'age_min', 'age_min', 'nb_online']
+        fields = ['id', 'date_stat', 'age_min', 'age_max', 'nb_online', 'dist']

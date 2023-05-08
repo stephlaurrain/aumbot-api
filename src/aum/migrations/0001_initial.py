@@ -65,6 +65,8 @@ class Migration(migrations.Migration):
                 ('age_min', models.IntegerField(null=True)),
                 ('age_max', models.IntegerField(null=True)),
                 ('nb_online', models.IntegerField(null=True)),
+                ('dist', models.IntegerField(null=True)),
+                
                 ],
         ),
         migrations.CreateModel(

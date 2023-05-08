@@ -61,6 +61,6 @@ admin.site.register(Keyword, KeywordAdmin)
 
 class StatAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'date_stat', 'age_min', 'age_min', 'nb_online')
+    list_display = ('id', 'date_stat', 'age_min', 'age_max', 'nb_online', 'dist')
 
 admin.site.register(Stat, StatAdmin)
